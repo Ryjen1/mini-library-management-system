@@ -1,6 +1,8 @@
 package goodgirly.com.minilibrarymanagementsystem.services;
 
+import goodgirly.com.minilibrarymanagementsystem.dto.BooksBorrowedByUserRequest;
 import goodgirly.com.minilibrarymanagementsystem.entities.Book;
+import goodgirly.com.minilibrarymanagementsystem.entities.User;
 import goodgirly.com.minilibrarymanagementsystem.repositories.BookRepository;
 import org.springframework.stereotype.Service;
 
@@ -10,9 +12,13 @@ import java.util.List;
 
 public class BookService {
     private final BookRepository bookRepository;
+    private final UserService userService;
+    private final BorrowedBookService borrowedBookService;
 
-    public BookService(BookRepository bookRepository) {
+    public BookService(BookRepository bookRepository, UserService userService, BorrowedBookService borrowedBookService) {
         this.bookRepository = bookRepository;
+        this.userService = userService;
+        this.borrowedBookService = borrowedBookService;
     }
 
     public Book addBook(Book newBook){
@@ -30,4 +36,5 @@ public class BookService {
     public Book findBookByTitle(String title) {
         return bookRepository.findBookByTitle(title);
     }
+
 }

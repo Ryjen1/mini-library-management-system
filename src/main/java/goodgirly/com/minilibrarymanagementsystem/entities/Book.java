@@ -22,7 +22,5 @@ public class Book {
     private String ISBN;
 
     private int publicationYear;
-
-    @OneToMany(mappedBy = "book")
-    private List<BorrowedBook> borrowedBy;
+    
 }
