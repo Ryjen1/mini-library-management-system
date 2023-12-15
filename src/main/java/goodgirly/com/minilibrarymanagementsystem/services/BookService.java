@@ -1,18 +1,25 @@
 package goodgirly.com.minilibrarymanagementsystem.services;
 
-import goodgirly.com.minilibrarymanagementsystem.entities.Books;
-import goodgirly.com.minilibrarymanagementsystem.repositories.BooksRepository;
-import org.springframework.beans.factory.annotation.Autowired;
+import goodgirly.com.minilibrarymanagementsystem.entities.Book;
+import goodgirly.com.minilibrarymanagementsystem.repositories.BookRepository;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
 
 @Service
 
 public class BookService {
-    @Autowired
-    private final BooksRepository booksRepository;
+    private final BookRepository bookRepository;
 
-    public BookService(BooksRepository booksRepository) {
-        this.booksRepository = booksRepository;
+    public BookService(BookRepository bookRepository) {
+        this.bookRepository = bookRepository;
     }
 
+    public Book addBook(Book newBook){
+        return bookRepository.save(newBook);
+    }
+
+    public List<Book> findBooks() {
+        return bookRepository.findAll();
+    }
 }

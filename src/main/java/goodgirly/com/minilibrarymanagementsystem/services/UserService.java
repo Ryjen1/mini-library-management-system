@@ -1,6 +1,6 @@
 package goodgirly.com.minilibrarymanagementsystem.services;
 
-import goodgirly.com.minilibrarymanagementsystem.repositories.UsersRepository;
+import goodgirly.com.minilibrarymanagementsystem.repositories.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -8,9 +8,9 @@ import org.springframework.stereotype.Service;
 
 public class UserService {
     @Autowired
-    private final UsersRepository usersRepository;
+    private final UserRepository usersRepository;
 
-    public UserService(UsersRepository usersRepository) {
+    public UserService(UserRepository usersRepository) {
         this.usersRepository = usersRepository;
     }
 }

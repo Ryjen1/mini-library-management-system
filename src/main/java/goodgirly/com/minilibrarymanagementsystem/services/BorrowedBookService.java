@@ -1,6 +1,6 @@
 package goodgirly.com.minilibrarymanagementsystem.services;
 
-import goodgirly.com.minilibrarymanagementsystem.repositories.BorrowedBooksRepository;
+import goodgirly.com.minilibrarymanagementsystem.repositories.BorrowedBookRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -8,9 +8,9 @@ import org.springframework.stereotype.Service;
 
 public class BorrowedBookService {
     @Autowired
-    private final BorrowedBooksRepository booksRepository;
+    private final BorrowedBookRepository booksRepository;
 
-    public BorrowedBookService(BorrowedBooksRepository booksRepository) {
+    public BorrowedBookService(BorrowedBookRepository booksRepository) {
         this.booksRepository = booksRepository;
     }
 }

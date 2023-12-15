@@ -1,15 +1,15 @@
 package goodgirly.com.minilibrarymanagementsystem.entities;
 
 import jakarta.persistence.*;
-import lombok.Data;
+import lombok.*;
 
 import java.util.List;
 
-@Data
+
 @Entity
 @Table(name = "book")
-
-public class Books {
+@Getter @Setter
+public class Book {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -24,5 +24,5 @@ public class Books {
     private int publicationYear;
 
     @OneToMany(mappedBy = "book")
-    private List<BorrowedBooks> borrowedBy;
+    private List<BorrowedBook> borrowedBy;
 }
