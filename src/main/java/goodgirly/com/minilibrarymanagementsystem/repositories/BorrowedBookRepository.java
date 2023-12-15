@@ -6,5 +6,5 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 
-public interface BorrowedBookRepository extends JpaRepository<BorrowedBook,Integer> {
+public interface BorrowedBookRepository extends JpaRepository<BorrowedBook,Long> {
 }

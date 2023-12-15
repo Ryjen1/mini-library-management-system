@@ -22,4 +22,12 @@ public class BookService {
     public List<Book> findBooks() {
         return bookRepository.findAll();
     }
+
+    public Book findBookById(Long id) {
+        return bookRepository.findById(id).get();
+    }
+
+    public Book findBookByTitle(String title) {
+        return bookRepository.findBookByTitle(title);
+    }
 }

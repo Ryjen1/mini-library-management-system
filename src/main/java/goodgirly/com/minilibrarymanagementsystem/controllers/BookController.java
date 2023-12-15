@@ -22,4 +22,12 @@ public class BookController {
     public List<Book> getBooks(){
         return bookService.findBooks();
     }
+    @GetMapping("/{id}")
+    public Book getBookById(@PathVariable("id") Long id){
+        return bookService.findBookById(id);
+    }
+    @GetMapping("/title")
+    public Book getBookByTitle(@RequestParam("title") String title){
+        return bookService.findBookByTitle(title);
+    }
 }
